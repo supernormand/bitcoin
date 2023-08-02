@@ -6,6 +6,8 @@
 
 export LC_ALL=C
 
+export PATH=$PWD/ci/retry:$PATH
+
 ${CI_RETRY_EXE} apt-get update
 # Lint dependencies:
 # - curl/xz-utils (to install shellcheck)
@@ -33,7 +35,7 @@ python3 --version
 
 ${CI_RETRY_EXE} pip3 install \
   codespell==2.2.5 \
-  flake8==6.0.0 \
+  flake8==6.1.0 \
   lief==0.13.2 \
   mypy==1.4.1 \
   pyzmq==25.1.0 \
